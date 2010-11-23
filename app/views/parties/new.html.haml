@@ -1,6 +1,6 @@
-%h1 Editing party
+%h1 New party
 
-- form_for(@party) do |f|
+- form_for(@party) do |f| 
   = f.error_messages
 
   %p 
@@ -27,10 +27,9 @@
   %p 
     = f.label :email <br />
     = f.text_field :email 
+    
   %p 
-    = f.submit 'Update' 
+    = f.submit 'Create'
 
 
-
-= link_to 'Show', @party |
 = link_to 'Back', parties_path 
