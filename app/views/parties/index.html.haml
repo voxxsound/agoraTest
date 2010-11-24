@@ -1,38 +1,39 @@
-%h1 Listing parties
+#index
+  %h1 Contact List
 
-%table
-  %tr
-    %th First name
-    %th Last name
-    %th Address
-    %th city
-    %th state
-    %th zip
-    %th Phone
-    %th Email
-
-  - @parties.each do |party|
+  %table
     %tr
-      %td
-        =h party.first_name
-      %td  
-        =h party.last_name
-      %td 
-        =h party.address
-      %td 
-        =h party.city
-      %td
-        =h party.state
-      %td
-        = party.zip
-      %td 
-        =h party.phone
-      %td 
-        =h party.email
-      %td 
-        = link_to 'Show', party
-        = link_to 'Edit', edit_party_path(party)
-        = link_to 'Destroy', party, :confirm => 'Are you sure?', :method => :delete
+      %th First name
+      %th Last name
+      %th Address
+      %th city
+      %th state
+      %th zip
+      %th Phone
+      %th Email
 
-%br
-= link_to 'New party', new_party_path
+    - @parties.each do |party|
+      %tr
+        %td
+          =h party.first_name
+        %td  
+          =h party.last_name
+        %td 
+          =h party.address
+        %td 
+          =h party.city
+        %td
+          =h party.state
+        %td
+          = party.zip
+        %td 
+          =h party.phone
+        %td 
+          =h party.email
+        %td 
+          = link_to 'Show', party
+          = link_to 'Edit', edit_party_path(party)
+          = link_to 'Destroy', party, :confirm => 'Are you sure?', :method => :delete
+
+  %br
+  = link_to 'New party', new_party_path
