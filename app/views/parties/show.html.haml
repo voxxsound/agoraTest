@@ -1,27 +1,32 @@
-%p 
-  First Name:
-  =h @party.first_name
-%p 
-  Last Name:
-  =h @party.last_name
-%p 
-  Address:
-  =h @party.address
-%p 
-  City:
-  =h @party.city
-%p 
-  State:
-  =h @party.state
-%p 
-  Zip:
-  =h @party.zip
-%p 
-  Phone:
-  =h @party.phone
-%p 
-  Email:
-  =h @party.email
+#show
+  %h1 #{@party.first_name}'s Contact Info
   
-= link_to 'Edit', edit_party_path(@party) |
-= link_to 'Back', parties_path
+
+  %p 
+    First Name:
+    =h @party.first_name
+  %p 
+    Last Name:
+    =h @party.last_name
+  %p 
+    Address:
+    =h @party.address
+  %p 
+    City:
+    =h @party.city
+  %p 
+    State:
+    =h @party.state
+  %p 
+    Zip:
+    =h @party.zip
+  %p 
+    Phone:
+    =h @party.phone
+  %p 
+    Email:
+    =h @party.email
+  %br/
+  %br/
+  = link_to 'Edit', edit_party_path(@party) |
+  = link_to 'Back', parties_path

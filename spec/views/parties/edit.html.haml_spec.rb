@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "/parties/edit.html.erb" do
+describe "/parties/edit.html.haml" do
   include PartiesHelper
 
   before(:each) do

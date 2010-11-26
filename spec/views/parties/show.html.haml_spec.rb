@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "/parties/show.html.erb" do
+describe "/parties/show.html.haml" do
   include PartiesHelper
   before(:each) do
     assigns[:party] = @party = stub_model(Party,

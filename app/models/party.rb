@@ -8,4 +8,12 @@ class Party < ActiveRecord::Base
   validates_presence_of :email
   validates_format_of :email, :with => /^([^\s]+)((?:[-a-z0-9]\.)[a-z]{2,})$/i
   validates_format_of :phone, :with => /^[\(\)0-9\- \+\.]{10,20}$/
+  
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['first_name LIKE ?', "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
 end

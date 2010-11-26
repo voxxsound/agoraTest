@@ -1,43 +1,45 @@
-%h1 New party
-
-- form_for(@party) do |f| 
-  = f.error_messages
-
-  %p 
-    = f.label :first_name
-    %br
-    = f.text_field :first_name
-  %p 
-    = f.label :last_name
-    %br
-    = f.text_field :last_name
-  %p 
-    = f.label :address
-    %br
-    = f.text_field :address
-  %p 
-    = f.label :city
-    %br
-    = f.text_field :city
-  %p 
-    = f.label :state 
-    %br
-    = f.text_field :state
-  %p 
-    = f.label :zip
-    %br
-    = f.text_field :zip 
-  %p 
-    = f.label :phone 
-    %br
-    = f.text_field :phone 
-  %p 
-    = f.label :email 
-    %br
-    = f.text_field :email 
-    
-  %p 
-    = f.submit 'Create'
+#new
+  %h1 New Contact
 
 
-= link_to 'Back', parties_path 
+  - form_for(@party) do |f| 
+    = f.error_messages
+
+    %p 
+      = f.label :first_name
+      %br/
+      = f.text_field :first_name
+    %p 
+      = f.label :last_name
+      %br/
+      = f.text_field :last_name
+    %p 
+      = f.label :address
+      %br/
+      = f.text_field :address
+    %p 
+      = f.label :city
+      %br/
+      = f.text_field :city
+    %p 
+      = f.label :state 
+      %br/
+      = f.text_field :state
+    %p 
+      = f.label :zip
+      %br/
+      = f.text_field :zip 
+    %p 
+      = f.label :phone 
+      %br/
+      = f.text_field :phone 
+    %p 
+      = f.label :email 
+      %br/
+      = f.text_field :email 
+    %br/
+    %p 
+      = f.submit 'Create'
+  %br/
+  %br/
+  = link_to 'Back', parties_path 

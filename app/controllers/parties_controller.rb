@@ -2,7 +2,8 @@ class PartiesController < ApplicationController
   # GET /parties
   # GET /parties.xml
   def index
-    @parties = Party.all
+    # @parties = Party.all
+    @parties = Party.search(params[:search])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -67,6 +68,10 @@ class PartiesController < ApplicationController
         format.xml  { render :xml => @party.errors, :status => :unprocessable_entity }
       end
     end
+  end
+
+  def search
+    @records = Record.search(params[:serach])
   end
 
   # DELETE /parties/1

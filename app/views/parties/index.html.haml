@@ -1,6 +1,12 @@
 #index
-  %h1 Contact List
+  %h1 Contacts
 
+  #search
+    - form_tag parties_path, :method => 'get' do
+      %p
+        = text_field_tag :search, params[:search]
+        = submit_tag "Search", :name => nil
+  
   %table
     %tr
       %th First name
@@ -15,9 +21,9 @@
     - @parties.each do |party|
       %tr
         %td
-          =h party.first_name
+          =h link_to "#{party.first_name}", party
         %td  
-          =h party.last_name
+          =h link_to "#{party.last_name}", party
         %td 
           =h party.address
         %td 
@@ -30,10 +36,12 @@
           =h party.phone
         %td 
           =h party.email
-        %td 
-          = link_to 'Show', party
-          = link_to 'Edit', edit_party_path(party)
-          = link_to 'Destroy', party, :confirm => 'Are you sure?', :method => :delete
-
-  %br
-  = link_to 'New party', new_party_path
+        %td
+          %ul
+            %li
+              = link_to 'Edit', edit_party_path(party)
+            %li
+              = link_to 'Delete', party, :confirm => 'Are you sure?', :method => :delete
+  %br/
+  %br/
+  = link_to 'New Contact', new_party_path
